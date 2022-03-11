@@ -1,0 +1,105 @@
+// Colors
+$black: #0a0004;
+$text: #ece7e7;
+$white: #fffaff;
+$bg: #26171c;
+    $bg-secondary: #3a2c31;
+        $bg-tertiary: #4e4146;
+$pink: #ba497d;
+$orange: #f26430;
+$blue: #5d9596;
+
+$cyan: #5bc0eb;
+$blue-bg: #a4dcf4;
+$teal: #156064;
+$dark-teal: #0b3132;
+$yellow: #f8e16c;
+$light-pink: #ffc2b4;
+$peach: #fb8f67;
+$purple: #593f62;
+
+
+// Gradients
+$grad-logo: linear-gradient(90deg, $pink 0%, $orange 100%);
+
+$grad-logo-secondary: linear-gradient(90deg, $peach 0%, $light-pink 100%);
+
+// Fonts
+@font-face {
+    font-family: Raleway;
+    font-weight: 400;
+    src: url(/static/fonts/Raleway-Regular.ttf);
+}
+
+// Globals
+:global(*) {
+    margin: 0;
+    padding: 0;
+    color: $text;
+    font-family: Raleway;
+    overflow-x: hidden;
+}
+
+:global(body) {
+    background-color: $dark-teal;
+}
+
+:global(a) {
+    color: $yellow
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $teal;
+    padding-top: 2rem;
+    * {
+        padding: 0 0 1rem 0;
+    }
+}
+
+// Media Query Mixins
+
+//Large Screen - 993 to 1170 screen size
+@mixin lg-screen{
+    @media only screen and (max-width: 1170px) {
+        @content;
+    }
+}
+
+//Medium Screen - 768 to 992 screen size
+@mixin md-screen{
+    @media only screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+//Small Screen - 575 to 767 screen size
+@mixin sm-screen{
+    @media only screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+//Extra Small Screen - below 575 screen size
+@mixin xs-screen{
+    @media only screen and (max-width: 575px) {
+        @content;
+    }
+}
+
+@mixin descending-width{
+    @include lg-screen {
+        width: 60vw;
+    }
+    @include md-screen {
+        width: 70vw;
+    }
+    @include sm-screen {
+        width: 80vw;
+    }
+    @include xs-screen {
+        width: 85vw;
+    }
+}
