@@ -1,21 +1,38 @@
+// import adapter from '@sveltejs/adapter-auto';
 import adapter from '@sveltejs/adapter-node';
-import sveltePreprocess from 'svelte-preprocess';
+import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: [
-		sveltePreprocess({
-			scss: {
-				prependData: `@import './src/style/app.scss';`
-			} 
-		}),
-	],
+	preprocess: preprocess({
+		scss: {
+			prependData: `@import './src/style/app.scss';`
+		} 
+	}),
+	onwarn: (warning, handler) => {
+        const { code } = warning;
+        if (code === "css-unused-selector")
+            return;
+
+        handler(warning);
+    },
 
 	kit: {
-		adapter: adapter()
-	}
+		adapter: adapter({
+			out: 'build',
+			envPrefix: 'PROD_'
+		}),
+		vite: {
+			server: {
+			  fs: {
+				allow: ['static'],
+			  },
+			},
+		  },
+	},
+
 };
 
 export default config;
