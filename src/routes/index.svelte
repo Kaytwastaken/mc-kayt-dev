@@ -1,3 +1,9 @@
+<svelte:head>
+    <title>&lt;mc.kayt.dev/&gt;</title>
+    <meta name="description" content="kayt's world downloads!">
+    <meta name="keywords" content="kayt,dev,minecraft">
+</svelte:head>
+
 <div class="container">
     <div>
         <h1>hi! welcome to mc.kayt.dev!</h1>
