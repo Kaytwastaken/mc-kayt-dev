@@ -31,6 +31,12 @@ $grad-logo-secondary: linear-gradient(90deg, $peach 0%, $light-pink 100%);
     src: url(/static/fonts/Raleway-Regular.ttf);
 }
 
+@font-face {
+    font-family: Raleway;
+    font-weight: 700;
+    src: url(/static/fonts/Raleway-Bold.ttf);
+}
+
 // Globals
 :global(*) {
     margin: 0;
@@ -52,7 +58,6 @@ $grad-logo-secondary: linear-gradient(90deg, $peach 0%, $light-pink 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $teal;
     padding-top: 2rem;
     * {
         padding: 0 0 1rem 0;

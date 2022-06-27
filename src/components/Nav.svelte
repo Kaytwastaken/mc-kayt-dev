@@ -1,44 +1,30 @@
 <nav>
     <a href="/">
-        <span>
-            <img src="/images/mc-kayt-dev.png" alt="" width="64">
-            <h1>&#060;mc.kayt.dev/&#062;</h1>
-        </span>
+        <h1>&#060;mc.kayt.dev/&#062;</h1>
     </a>
     <span>
-        <a sveltekit:prefetch href="https://kayt.dev">&#060;Kayt.dev/&#062;</a>
-        <a sveltekit:prefetch href="/">Home</a>
-        <a href="/tweaks">Tweaks</a>
-        <!-- <a href="#">Coming soon?</a> -->
+        <a href="/">home</a>
+        <a href="/worlds">worlds</a>
     </span>
 </nav>
 
 <style lang="scss">
     nav {
-        // background-color: $bg-secondary;
-        // padding: 0 33vw 0 33vw;
+        background-color: $teal;
         color: $text;
         display: flex;
         justify-content: space-evenly;
-        // margin-bottom: 2rem;
         align-items: center;
         flex-direction: row;
-        background-color: #3890A8;
-
         @include xs-screen{
             flex-direction: column;
             align-items: flex-start;
         }
-
         * {
             padding: .5rem;
         }
         h1 {
-            // background-image: $grad-logo-secondary;
-            background-color: $yellow;
-            color:transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
+            color: $yellow;
         }
         a {
             text-decoration: none;
@@ -52,10 +38,10 @@
             }
             a {
                 padding: 1rem 1rem 1rem 1rem;
-                border-bottom: 2px solid $teal;
+                border-bottom: 1px solid $teal;
             }
             a:hover {
-                border-bottom: 2px solid $yellow;
+                border-bottom: 1px solid $yellow;
             }
         }
         img {
